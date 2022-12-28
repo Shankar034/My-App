@@ -2,14 +2,14 @@ import React from 'react'
 
 const Footer = () => {
 
-  let footerStyle ={
-    position:"relative",
-    top:"40vh",
-    width:"100%"
+  // let footerStyle ={
+  //   position:"relative",
+  //   top:"40vh",
+  //   width:"100%"
    
-  }
+  // }
   return (
-    <footer className='bg-light text-dark py-3' style={footerStyle}>
+    <footer className='bg-dark text-light py-3' >
     <p className='text-center'>
 
       Copyright &copy; MyTodosList.com
