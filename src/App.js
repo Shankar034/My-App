@@ -24,31 +24,43 @@ function App() {
   
  }
 
+ const addTodo = (title, desc)=>{
+  console.log("I am adding this todo", title, desc)
+  let sno= todos[todos.length-1].sno+1;
+  const myTodo = {
+    sno:sno,
+    title: title,
+    desc:desc
+  }
+  setTodos([...todos, myTodo])
+  console.log(myTodo);
+ }
+
  const [todos, setTodos] = useState(
   [
-    // {
-    //   sno:1,
-    //   title: "GO to the market",
-    //   desc:"You need to go to the market to get this job done"
+    {
+      sno:1,
+      title: "GO to the market",
+      desc:"You need to go to the market to get this job done"
 
-    // },
-    // {
-    //   sno:2,
-    //   title: "GO to the Mall",
-    //   desc:"You need to go to the market to get this job done"
+    },
+    {
+      sno:2,
+      title: "GO to the Mall",
+      desc:"You need to go to the market to get this job done"
 
-    // },
-    // {
-    //   sno:3,
-    //   title: "GO to the Supermarket",
-    //   desc:"You need to go to the market to get this job done"
+    },
+    {
+      sno:3,
+      title: "GO to the Supermarket",
+      desc:"You need to go to the market to get this job done"
 
-    // }
+    }
   ]);
   return (
     <>
     <Header title="My Todos list" searchBar={false}/>
-    <AddTodo/>
+    <AddTodo addTodo={addTodo}/>
     <Todos todos ={todos} onDelete={onDelete}/>
 
     <Footer/>
